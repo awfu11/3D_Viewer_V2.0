@@ -51,4 +51,4 @@ You need to develop a program to visualise 3D wireframe models:
 - The program must allow recording small screencasts by a special button - the current custom affine transformation of the loaded object into gif-animation (640x480, 10fps, 5s)
 
 
-![alt text](https://github.com/awfu11/s21_3dviewer/blob/master/3D\ Viewer\ v1.0.png ? raw=true)
+![alt text](https://github.com/awfu11/s21_3dviewer/blob/master/3D&nbsp;Viewer\ v1.0.png ? raw=true)
