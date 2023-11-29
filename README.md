@@ -4,6 +4,12 @@ Implementation of 3DViewer v2.0
 
 ![](materials/animation.gif)
 
+## Installation
+      make install
+
+## Uninstallation
+      make uninstall
+
 ## Introduction
 
 This project implements an application for viewing 3D wireframe models in C++ in the object-oriented programming paradigm.
