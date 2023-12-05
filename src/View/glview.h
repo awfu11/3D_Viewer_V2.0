@@ -31,26 +31,26 @@ class GLView : public QOpenGLWidget, protected QOpenGLFunctions {
   void SetParamTz(double offset) { param_.offsetZ = offset; }
 
   void SetParamScale(double scale) { param_.scale = scale; }
-  double GetParamScale() const { return param_.scale; }
+  double GetParamScale() const noexcept { return param_.scale; }
 
-  QString GetFileName() const { return fileName_; }
+  QString GetFileName() const noexcept { return fileName_; }
   void SetFileName(const QString &file) { fileName_ = file; }
 
-  Projection GetProjection() const { return projection_; }
+  Projection GetProjection() const noexcept { return projection_; }
   void SetProjection(Projection projection) { projection_ = projection; }
 
-  Type GetTypeVertex() const { return typeVertex_; }
+  Type GetTypeVertex() const noexcept { return typeVertex_; }
   void SetTypeVertex(Type type) { typeVertex_ = type; }
   QColor &GetColorVertex() { return colorVertex_; }
   void SetColorVertex(QColor color) { colorVertex_ = color; }
-  int GetSizeVertex() const { return sizeVertex_; }
+  int GetSizeVertex() const noexcept { return sizeVertex_; }
   void SetSizeVertex(int size) { sizeVertex_ = size; }
 
-  Type GetTypeEdge() const { return typeEdge_; }
+  Type GetTypeEdge() const noexcept { return typeEdge_; }
   void SetTypeEdge(Type type) { typeEdge_ = type; }
   QColor &GetColorEdge() { return colorEdge_; }
   void SetColorEdge(QColor color) { colorEdge_ = color; }
-  int GetSizeEdge() const { return sizeEdge_; }
+  int GetSizeEdge() const noexcept { return sizeEdge_; }
   void SetSizeEdge(int size) { sizeEdge_ = size; }
 
   QColor &GetColorBG() { return colorBackground_; }
