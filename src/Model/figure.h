@@ -25,9 +25,9 @@ class Figure {
 
   Params& GetParameters() { return param_; }
 
-  std::size_t GetVerticesNumbers() const { return vertices_.size(); }
+  std::size_t GetVerticesNumbers() const noexcept { return vertices_.size(); }
 
-  std::size_t GetEdgesNumbers() const { return edges_.size(); }
+  std::size_t GetEdgesNumbers() const noexcept { return edges_.size(); }
 
   std::vector<double>& GetVertices() { return vertices_; }
 
