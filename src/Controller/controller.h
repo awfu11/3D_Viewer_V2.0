@@ -10,13 +10,13 @@ class Controller {
   Controller(Model* m) : model_(m) {}
   ~Controller() = default;
 
-  std::size_t GetVerticesNumbers() const {
+  std::size_t GetVerticesNumbers() const noexcept {
     return model_->GetVerticesNumbers();
   }
 
   double* GetVertices() { return model_->GetVertices().data(); }
 
-  std::size_t GetEdgesNumbers() const { return model_->GetEdgesNumbers(); }
+  std::size_t GetEdgesNumbers() const noexcept { return model_->GetEdgesNumbers(); }
 
   int* GetEdges() { return model_->GetEdges().data(); }
 
