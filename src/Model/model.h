@@ -25,7 +25,7 @@ class Model {
     return figure_.GetVerticesNumbers();
   }
 
-  std::size_t GetEdgesNumbers() const { return figure_.GetEdgesNumbers(); }
+  std::size_t GetEdgesNumbers() const noexcept { return figure_.GetEdgesNumbers(); }
 
   std::vector<double>& GetVertices() { return figure_.GetVertices(); }
 
