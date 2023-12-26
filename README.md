@@ -29,29 +29,6 @@ The interface domain is only responsible for displaying the interface and passin
 The business logic domain is responsible for the main functionality of the system. This is where the loaded data is stored and all the operations with it are performed. This domain is also where the rendering is done.
 
 
-## Facade pattern (facade)
-
-#### Purpose of the Facade pattern
-
-- The Facade pattern provides a unified interface instead of a set of interfaces of some subsystem. Facade defines a higher-level interface that simplifies the use of the subsystem.
-- The Facade pattern "wraps" a complex subsystem with a simpler interface.
-
-## Strategy pattern (strategy)
-
-#### Purpose of the Strategy pattern
-
-There are systems whose behavior can be determined according to one algorithm from a certain family. All algorithms of this family are related: they are designed to solve common problems, have the same interface for use and differ only in implementation (behavior). The user, having pre-configured the program for the desired algorithm (by choosing a strategy), receives the expected result.
-
-## Command pattern (command)
-
-#### Assignment of the Command pattern
-
-Use the Command pattern if
-
-- The system is managed by events. If such an event (request) occurs, you must perform a certain sequence of actions.
-- It is necessary to parameterize objects by the action being performed, queue requests or support undo and redo operations.
-- You need an object-oriented analogue of the callback function in procedural programming.
-
 ## Implementation of the 3DViewer v2.0
 
 Develop a program to visualise the 3D wireframe models.
