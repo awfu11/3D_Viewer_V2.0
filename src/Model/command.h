@@ -13,16 +13,10 @@ class Command {
 
 class RotateCommand : public Command {
  public:
-  RotateCommand(Figure* figure, Strategy* strategy) {
-    figure_ = figure;
-    strategy_ = strategy;
-  }
+  RotateCommand(Figure* figure, Strategy* strategy);
+  ~RotateCommand();
 
-  ~RotateCommand() { delete strategy_; }
-
-  void Execute() override {
-    strategy_->Modify(figure_->GetVertices(), figure_->GetParameters());
-  }
+  void Execute() override;
 
  private:
   Figure* figure_;
@@ -31,16 +25,10 @@ class RotateCommand : public Command {
 
 class MoveCommand : public Command {
  public:
-  MoveCommand(Figure* figure, Strategy* strategy) {
-    figure_ = figure;
-    strategy_ = strategy;
-  }
+  MoveCommand(Figure* figure, Strategy* strategy);
+  ~MoveCommand();
 
-  ~MoveCommand() { delete strategy_; }
-
-  void Execute() override {
-    strategy_->Modify(figure_->GetVertices(), figure_->GetParameters());
-  }
+  void Execute() override;
 
  private:
   Figure* figure_;
@@ -49,16 +37,10 @@ class MoveCommand : public Command {
 
 class ScaleCommand : public Command {
  public:
-  ScaleCommand(Figure* figure, Strategy* strategy) {
-    figure_ = figure;
-    strategy_ = strategy;
-  }
+  ScaleCommand(Figure* figure, Strategy* strategy);
+  ~ScaleCommand();
 
-  ~ScaleCommand() { delete strategy_; }
-
-  void Execute() override {
-    strategy_->Modify(figure_->GetVertices(), figure_->GetParameters());
-  }
+  void Execute() override;
 
  private:
   Figure* figure_;

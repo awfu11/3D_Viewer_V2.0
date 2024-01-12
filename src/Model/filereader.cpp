@@ -1,6 +1,14 @@
 #include "filereader.h"
 
 namespace awfl {
+void FileReader::GetDataFromFile(Figure& figure, const std::string& path) {
+  filePath_ = path;
+  figure.ClearData();
+  ReadData_(figure);
+}
+
+void FileReader::SetFileName(const std::string& path) { filePath_ = path; }
+
 std::pair<std::size_t, std::size_t> FileReader::GetNumbers_() {
   std::size_t v = 0, e = 0;
   std::ifstream file(filePath_);

@@ -10,23 +10,21 @@ class Controller {
   Controller(Model* m) : model_(m) {}
   ~Controller() = default;
 
-  std::size_t GetVerticesNumbers() const noexcept {
-    return model_->GetVerticesNumbers();
-  }
+  std::size_t GetVerticesNumbers() const noexcept;
 
-  double* GetVertices() { return model_->GetVertices().data(); }
+  double* GetVertices() const noexcept;
 
-  std::size_t GetEdgesNumbers() const noexcept { return model_->GetEdgesNumbers(); }
+  std::size_t GetEdgesNumbers() const noexcept;
 
-  int* GetEdges() { return model_->GetEdges().data(); }
+  int* GetEdges() const noexcept;
 
-  double Normalization() { return model_->Normalization(); }
+  double Normalization();
 
-  void Transform(Params& param) { model_->Transform(param); }
+  void Transform(Params& param);
 
-  void ReadData(const std::string& path) { model_->ReadFile(path); }
+  void ReadData(const std::string& path);
 
-  void ClearData() { model_->ClearData(); }
+  void ClearData();
 
  private:
   Model* model_;

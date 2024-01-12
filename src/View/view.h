@@ -81,6 +81,7 @@ class View : public QMainWindow {
   void LoadSettings_();
 
   QImage GetImage_();
+  QString GetDir_() const;
 };
 
 }  // namespace awfl

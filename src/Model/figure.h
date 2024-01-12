@@ -21,30 +21,20 @@ class Figure {
   Figure() = default;
   ~Figure() = default;
 
-  void SetParameters(Params& param) { param_ = param; }
+  void SetParameters(Params& param);
+  Params& GetParameters();
 
-  Params& GetParameters() { return param_; }
+  std::size_t GetVerticesNumbers() const noexcept;
+  std::size_t GetEdgesNumbers() const noexcept;
 
-  std::size_t GetVerticesNumbers() const noexcept { return vertices_.size(); }
+  std::vector<double>& GetVertices();
+  std::vector<int>& GetEdges();
 
-  std::size_t GetEdgesNumbers() const noexcept { return edges_.size(); }
+  void ClearData();
 
-  std::vector<double>& GetVertices() { return vertices_; }
+  void ToInitial();
 
-  std::vector<int>& GetEdges() { return edges_; }
-
-  void ClearData() {
-    initial_.clear();
-    vertices_.clear();
-    edges_.clear();
-  }
-
-  void ToInitial() { vertices_ = initial_; }
-
-  double Normalization() {
-    auto maxSize = std::minmax_element(initial_.begin(), initial_.end());
-    return std::max(std::abs(*maxSize.first), *maxSize.second);
-  }
+  double Normalization() const noexcept;
 
  private:
   Params param_;

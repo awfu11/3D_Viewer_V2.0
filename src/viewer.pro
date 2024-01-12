@@ -9,7 +9,11 @@ CONFIG += c++17 sdk_no_version_check
 #DEFINES += QT_DISABLE_DEPRECATED_BEFORE=0x060000    # disables all the APIs deprecated before Qt 6.0.0
 
 SOURCES += \
+    Controller/controller.cpp \
+    Model/figure.cpp \
     Model/strategy.cpp \
+    Model/command.cpp \
+    Model/model.cpp \
     Model/filereader.cpp \
     View/QtGifImage/gifimage/qgifimage.cpp \
     View/QtGifImage/giflib/dgif_lib.c \

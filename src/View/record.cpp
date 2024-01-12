@@ -10,11 +10,9 @@ QImage View::GetImage_() {
 }
 
 void View::ScreenButtonClicked_() {
-  QString temp = QCoreApplication::applicationDirPath();
-  auto pos = temp.indexOf("/build", 0);
-  temp = temp.left(pos);
-  QString fileName = QFileDialog::getSaveFileName(
-      this, tr("Save file"), temp + "/images", tr("JPG (*.jpg);; BMP (*.bmp)"));
+  QString fileName =
+      QFileDialog::getSaveFileName(this, tr("Save file"), GetDir_() + "/images",
+                                   tr("JPG (*.jpg);; BMP (*.bmp)"));
   QImage img = GetImage_();
   if (img.save(fileName)) {
     QMessageBox msgBox;
@@ -45,12 +43,8 @@ void View::GifCreate_() {
 }
 
 void View::GifButtonClicked_() {
-  QString temp = QCoreApplication::applicationDirPath();
-  auto pos = temp.indexOf("/build", 0);
-  temp = temp.left(pos);
-
   gifFileName_ = QFileDialog::getSaveFileName(
-      this, tr("Save file"), temp + "/images", tr("GIF (*.gif)"));
+      this, tr("Save file"), GetDir_() + "/images", tr("GIF (*.gif)"));
   if (!gifFileName_.isEmpty()) {
     gifIm_ = new QGifImage;
     gifIm_->setDefaultDelay(10);

@@ -9,13 +9,9 @@ class FileReader {
   FileReader() = default;
   ~FileReader() = default;
 
-  void GetDataFromFile(Figure& figure, const std::string& path) {
-    filePath_ = path;
-    figure.ClearData();
-    ReadData_(figure);
-  }
+  void GetDataFromFile(Figure& figure, const std::string& path);
 
-  void SetFileName(const std::string& path) { filePath_ = path; }
+  void SetFileName(const std::string& path);
 
  private:
   std::string filePath_;

@@ -85,16 +85,19 @@ void View::ReadFile_(QString filePath) {
 }
 
 void View::OpenfileButtonClicked_() {
-  QString temp = QCoreApplication::applicationDirPath();
-  auto pos = temp.indexOf("/build", 0);
-  temp = temp.left(pos);
   QString fileName = QFileDialog::getOpenFileName(
-      0, tr("Open file"), temp + "/models", tr("Object files (*.obj)"));
+      0, tr("Open file"), GetDir_() + "/models", tr("Object files (*.obj)"));
   ui_->openGLWidget->SetFileName(fileName);
   if (fileName.isEmpty()) {
     return;
   }
   ReadFile_(fileName);
   ui_->openGLWidget->update();
+}
+
+QString View::GetDir_() const {
+  QString path = QCoreApplication::applicationDirPath();
+  auto pos = path.indexOf("/build", 0);
+  return path.left(pos);
 }
 }  // namespace awfl

@@ -9,45 +9,22 @@
 namespace awfl {
 class Model {
  public:
-  Model() {
-    exec_.push_back(new RotateCommand(&figure_, new RotateStrategy()));
-    exec_.push_back(new MoveCommand(&figure_, new MoveStrategy()));
-    exec_.push_back(new ScaleCommand(&figure_, new ScaleStrategy()));
-  }
+  Model();
+  ~Model();
 
-  ~Model() {
-    for (std::size_t i = 0; i < exec_.size(); ++i) {
-      delete exec_[i];
-    }
-  }
+  std::size_t GetVerticesNumbers() const noexcept;
+  std::size_t GetEdgesNumbers() const noexcept;
 
-  std::size_t GetVerticesNumbers() const {
-    return figure_.GetVerticesNumbers();
-  }
+  std::vector<double>& GetVertices();
+  std::vector<int>& GetEdges();
 
-  std::size_t GetEdgesNumbers() const noexcept { return figure_.GetEdgesNumbers(); }
+  void ReadFile(const std::string& path);
 
-  std::vector<double>& GetVertices() { return figure_.GetVertices(); }
+  void ClearData();
 
-  std::vector<int>& GetEdges() { return figure_.GetEdges(); }
+  double Normalization() const noexcept;
 
-  double Normalization() { return figure_.Normalization(); }
-
-  void ClearData() { figure_.ClearData(); }
-
-  void ReadFile(const std::string& path) {
-    ClearData();
-    reader_.GetDataFromFile(figure_, path);
-    figure_.ToInitial();
-  }
-
-  void Transform(Params& param) {
-    figure_.SetParameters(param);
-    figure_.ToInitial();
-    for (std::size_t i = 0; i < exec_.size(); ++i) {
-      exec_[i]->Execute();
-    }
-  }
+  void Transform(Params& param);
 
  private:
   Figure figure_;
